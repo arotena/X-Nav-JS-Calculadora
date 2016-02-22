@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Sumador</title>
+		<style type="text/css">
+			body {background: black;}
+  		p a{ color: red; }
+			p #resultado { color:red; }
+			#display {color: red;}
+		</style>
+		<script type="text/javascript" charset="utf-8">
+			 primero = -1;
+			 segundo = -1;
+			 valido = false;
+       function uno(){
+         var resultado = document.getElementById("display");
+				 var fin = document.getElementById("resultado");
+				 if(primero != -1 && valido == true){
+					 segundo = 1;
+				 }else{
+					 primero = 1;
+				 }
+				 resultado.innerHTML = "" ;
+				 fin.innerHTML = "";
+         resultado.innerHTML = "1" ;
+       }
+			 function cero(){
+         var resultado = document.getElementById("display");
+				 var fin = document.getElementById("resultado");
+				 if(primero != -1 && valido == true){
+					 segundo = 0;
+				 }else{
+					 primero = 0;
+				 }
+				 resultado.innerHTML = "" ;
+				 fin.innerHTML = "";
+				 resultado.innerHTML = "0" ;
+       }
+			 function suma(){
+         var resultado = document.getElementById("display");
+				 if(primero != -1){
+					 valido = true;
+				 }
+				 resultado.innerHTML = "" ;
+       }
+			 function igual(){
+				 var resultado = document.getElementById("display");
+				 var fin = document.getElementById("resultado");
+				 if(primero != -1 && segundo != -1 && valido == true){
+					 if(primero==1 && segundo==0 || segundo==1 && primero==0){
+							 resultado.innerHTML = "";
+							 fin.innerHTML = 1;
+					}else{
+						 resultado.innerHTML = "";
+						 fin.innerHTML = 0;
+					 }
+				 }else{
+					 resultado.innerHTML = "";
+					 fin.innerHTML = "";
+				 }
+				 primero = -1;
+				 segundo = -1;
+				 valido = false;
+       }
+     </script>
+	</head>
+	<body>
+		<p><a href="javascript: uno()">1</a> <a href="javascript: cero()">0</a>
+		<a href="javascript: suma()">+</a> <a href="javascript: igual()">=</a>
+		<span id = "resultado"></span> </p>
+		<span id = "display"></span>
+	</body>
+</html>
